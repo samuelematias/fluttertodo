@@ -16,7 +16,19 @@ initMethod(context) {
   client = GraphQLProvider.of(context).value;
 }
 
+FocusNode _focusNode = FocusNode();
+
 class _TodoAppState extends State<TodoApp> {
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     WidgetsBinding.instance.addPostFrameCallback((_) => initMethod(context));
@@ -24,6 +36,7 @@ class _TodoAppState extends State<TodoApp> {
       floatingActionButton: FloatingActionButton(
         heroTag: "Tag",
         onPressed: () {
+          FocusScope.of(context).requestFocus(_focusNode);
           showDialog(
               context: context,
               builder: (BuildContext context1) {
@@ -36,6 +49,7 @@ class _TodoAppState extends State<TodoApp> {
                             mainAxisSize: MainAxisSize.min,
                             children: <Widget>[
                           TextField(
+                            focusNode: _focusNode,
                             controller: controller,
                             decoration: InputDecoration(labelText: "Task"),
                           ),
@@ -56,6 +70,7 @@ class _TodoAppState extends State<TodoApp> {
                                           ),
                                         );
                                         Navigator.pop(context);
+                                        controller.text = '';
                                       },
                                       child: Text(
                                         "Add",
