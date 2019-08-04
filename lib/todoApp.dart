@@ -16,8 +16,6 @@ initMethod(context) {
   client = GraphQLProvider.of(context).value;
 }
 
-FocusNode _focusNode = FocusNode();
-
 class _TodoAppState extends State<TodoApp> {
   @override
   void initState() {
@@ -36,48 +34,55 @@ class _TodoAppState extends State<TodoApp> {
       floatingActionButton: FloatingActionButton(
         heroTag: "Tag",
         onPressed: () {
-          FocusScope.of(context).requestFocus(_focusNode);
           showDialog(
-              context: context,
-              builder: (BuildContext context1) {
-                return AlertDialog(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(8.0))),
-                    title: Text("Add task"),
-                    content: Form(
-                        child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: <Widget>[
-                          TextField(
-                            focusNode: _focusNode,
-                            controller: controller,
-                            decoration: InputDecoration(labelText: "Task"),
+            context: context,
+            builder: (BuildContext context1) {
+              return AlertDialog(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(8.0),
+                  ),
+                ),
+                title: Text("Add task"),
+                content: Form(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      TextField(
+                        controller: controller,
+                        decoration: InputDecoration(labelText: "Task"),
+                      ),
+                      Center(
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 10.0),
+                          child: RaisedButton(
+                            elevation: 7,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            color: Colors.black,
+                            onPressed: () async {
+                              await client.mutate(
+                                MutationOptions(
+                                  document: addTaskMutation(controller.text),
+                                ),
+                              );
+                              Navigator.pop(context);
+                              controller.text = '';
+                            },
+                            child: Text(
+                              "Add",
+                              style: TextStyle(color: Colors.white),
+                            ),
                           ),
-                          Center(
-                              child: Padding(
-                                  padding: const EdgeInsets.only(top: 10.0),
-                                  child: RaisedButton(
-                                      elevation: 7,
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(12),
-                                      ),
-                                      color: Colors.black,
-                                      onPressed: () async {
-                                        await client.mutate(
-                                          MutationOptions(
-                                            document: addTaskMutation(
-                                                controller.text),
-                                          ),
-                                        );
-                                        Navigator.pop(context);
-                                        controller.text = '';
-                                      },
-                                      child: Text(
-                                        "Add",
-                                        style: TextStyle(color: Colors.white),
-                                      ))))
-                        ])));
-              });
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              );
+            },
+          );
         },
         child: Icon(Icons.add),
       ),
@@ -116,7 +121,8 @@ class _TodoAppState extends State<TodoApp> {
                   toggleIsCompleted: () async {
                     final Map<String, dynamic> response = (await client.mutate(
                       MutationOptions(
-                          document: toggleIsCompletedMutation(result, index)),
+                        document: toggleIsCompletedMutation(result, index),
+                      ),
                     ))
                         .data;
                     print(response);
