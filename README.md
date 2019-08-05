@@ -23,9 +23,9 @@
 
 This app was developed from the tutorial [Flutter + GraphQL with Hasura](https://blog.geekyants.com/flutter-graphql-with-hasura-d4d0b34621da)
 by [GeekyAnts](https://blog.geekyants.com/@geekyants). <br/>
-This is a ToDo-App where you can add/update/delete your tasks in realtime. So if you update a task, for example, everyone who has this app, sharing your list, will be updated too at the same time (realtime).
+This is a ToDo-App where you can add/update/delete your tasks in real time. So if you update a task, for example, everyone who has this app, sharing your list, will be updated too at the same time (real time).
 <br/>
-In the development of this APP was used [Flutter](https://flutter.dev/) to build cross-platform mobile apps and [HASURA](https://hasura.io/) to using the realtime database with [GraphQL](https://graphql.org/) and [Postgre](https://www.postgresql.org/).
+In the development of this APP was used [Flutter](https://flutter.dev/) to build cross-platform mobile apps and [HASURA](https://hasura.io/) to using the real time database with [GraphQL](https://graphql.org/) and [Postgre](https://www.postgresql.org/).
 <br/>
 This is the link of my Hasura Server hosted at heroku -> [hasura-fluttertodo](https://hasura-fluttertodo.herokuapp.com).
 
