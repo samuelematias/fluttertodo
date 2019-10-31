@@ -12,7 +12,7 @@ class TodoApp extends StatefulWidget {
 
 GraphQLClient client;
 final TextEditingController controller = TextEditingController();
-initMethod(context) {
+void initMethod(context) {
   client = GraphQLProvider.of(context).value;
 }
 
