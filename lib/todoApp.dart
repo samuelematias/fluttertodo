@@ -49,6 +49,7 @@ class _TodoAppState extends State<TodoApp> {
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
                       TextField(
+                        autofocus: true,
                         controller: controller,
                         decoration: InputDecoration(labelText: "Task"),
                       ),
