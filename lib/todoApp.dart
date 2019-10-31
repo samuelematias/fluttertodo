@@ -118,7 +118,6 @@ class _TodoAppState extends State<TodoApp> {
                       ),
                     ))
                         .data;
-                    print(response);
                   },
                   toggleIsCompleted: () async {
                     final Map<String, dynamic> response = (await client.mutate(
@@ -127,7 +126,6 @@ class _TodoAppState extends State<TodoApp> {
                       ),
                     ))
                         .data;
-                    print(response);
                   },
                 );
               },
