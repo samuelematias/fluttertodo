@@ -19,33 +19,33 @@ class GraphQlObject {
 GraphQlObject graphQlObject = GraphQlObject();
 
 String toggleIsCompletedMutation(result, index) {
-  return ("""mutation ToggleTask{
+  return """mutation ToggleTask{
          update_todo(where: {
           id: {_eq: ${result.data["todo"][index]["id"]}}},
           _set: {isCompleted: ${!result.data["todo"][index]["isCompleted"]}}) {
              returning {isCompleted } }
-             }""");
+             }""";
 }
 
 String deleteTaskMutation(result, index) {
-  return ("""mutation DeleteTask{       
+  return """mutation DeleteTask{       
               delete_todo(where: {id: {_eq: ${result.data["todo"][index]["id"]}}}) {
                  returning {id} }
-                 }""");
+                 }""";
 }
 
 String addTaskMutation(task) {
-  return ("""mutation AddTask{
+  return """mutation AddTask{
               insert_todo(objects: {isCompleted: false, task: "$task"}) {
                 returning {id} }
-                 }""");
+                 }""";
 }
 
 String fetchQuery() {
-  return ("""query TodoGet{
+  return """query TodoGet{
                todo {
                   id
                   isCompleted
                   task
-                  }} """);
+                  }} """;
 }
