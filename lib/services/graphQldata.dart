@@ -6,7 +6,7 @@ class GraphQlObject {
     uri: 'https://hasura-fluttertodo.herokuapp.com/v1/graphql',
   );
   static AuthLink authLink = AuthLink();
-  static Link link = httpLink as Link;
+  static Link link = httpLink;
   ValueNotifier<GraphQLClient> client = ValueNotifier(
     GraphQLClient(
       cache: InMemoryCache(),
@@ -15,7 +15,7 @@ class GraphQlObject {
   );
 }
 
-GraphQlObject graphQlObject = new GraphQlObject();
+GraphQlObject graphQlObject = GraphQlObject();
 
 String toggleIsCompletedMutation(result, index) {
   return ("""mutation ToggleTask{
