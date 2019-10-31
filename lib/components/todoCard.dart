@@ -15,10 +15,10 @@ class TodoCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(
+      padding: EdgeInsets.only(
         left: 12.0,
-        right: 12.0,
         top: 8.0,
+        right: 12.0,
       ),
       child: InkWell(
         onTap: () {
@@ -35,7 +35,7 @@ class TodoCard extends StatelessWidget {
                       : TextDecoration.none),
             ),
             leading: Padding(
-              padding: const EdgeInsets.only(left: 18.0),
+              padding: EdgeInsets.only(left: 18.0),
               child: Icon(
                 !isCompleted
                     ? Icons.radio_button_unchecked

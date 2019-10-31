@@ -55,7 +55,7 @@ class _TodoAppState extends State<TodoApp> {
                       ),
                       Center(
                         child: Padding(
-                          padding: const EdgeInsets.only(top: 10.0),
+                          padding: EdgeInsets.only(top: 10.0),
                           child: RaisedButton(
                             elevation: 7,
                             shape: RoundedRectangleBorder(
@@ -97,7 +97,6 @@ class _TodoAppState extends State<TodoApp> {
         child: Query(
           options: QueryOptions(document: fetchQuery(), pollInterval: 1),
           builder: (QueryResult result, {VoidCallback refetch}) {
-            //  test = GraphQLProvider.of(context).value;
             if (result.errors != null) {
               return Text(result.errors.toString());
             }
