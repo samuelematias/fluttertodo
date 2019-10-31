@@ -112,20 +112,18 @@ class _TodoAppState extends State<TodoApp> {
                   task: result.data["todo"][index]["task"],
                   isCompleted: result.data["todo"][index]["isCompleted"],
                   delete: () async {
-                    final Map<String, dynamic> response = (await client.mutate(
+                    await client.mutate(
                       MutationOptions(
                         document: deleteTaskMutation(result, index),
                       ),
-                    ))
-                        .data;
+                    );
                   },
                   toggleIsCompleted: () async {
-                    final Map<String, dynamic> response = (await client.mutate(
+                    await client.mutate(
                       MutationOptions(
                         document: toggleIsCompletedMutation(result, index),
                       ),
-                    ))
-                        .data;
+                    );
                   },
                 );
               },
