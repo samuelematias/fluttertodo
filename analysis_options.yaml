@@ -1,0 +1,85 @@
+analyzer:
+  #  strong-mode:
+  #    implicit-dynamic: false
+  errors:
+    todo: ignore
+
+linter:
+  rules:
+    - avoid_empty_else
+    - avoid_print
+    - avoid_relative_lib_imports
+    #    - avoid_returning_null_for_future
+    - await_only_futures
+    - close_sinks
+    - avoid_init_to_null
+    - avoid_null_checks_in_equality_operators
+    - cancel_subscriptions
+    - annotate_overrides
+    - avoid_types_as_parameter_names
+    - avoid_renaming_method_parameters
+    #    - avoid_function_literals_in_foreach_calls
+    - empty_statements
+    - always_declare_return_types
+    #    - always_put_control_body_on_new_line
+    #    - always_put_required_named_parameters_first
+    - always_require_non_null_named_parameters
+    #    - always_specify_types
+    - avoid_bool_literals_in_conditional_expressions
+    - avoid_classes_with_only_static_members
+    #    - avoid_positional_boolean_parameters
+    - avoid_return_types_on_setters
+    - control_flow_in_finally
+    - camel_case_types
+    #    - directives_ordering
+    - non_constant_identifier_names
+    - curly_braces_in_flow_control_structures
+    - avoid_returning_null_for_void
+    - empty_catches
+    - empty_constructor_bodies
+    - no_adjacent_strings_in_list
+    - no_duplicate_case_values
+    # - file_names
+    - implementation_imports
+    - library_names
+    - library_prefixes
+    #    - overridden_fields
+    - prefer_adjacent_string_concatenation
+    - prefer_asserts_in_initializer_lists
+    - prefer_collection_literals
+    - prefer_conditional_assignment
+    - prefer_contains
+    - prefer_equal_for_default_values
+    - prefer_final_fields
+    - prefer_final_locals
+    - prefer_foreach
+    - prefer_function_declarations_over_variables
+    #    - prefer_generic_function_type_aliases
+    #    - prefer_if_null_operators
+    - prefer_initializing_formals
+    - prefer_inlined_adds
+    #    - prefer_interpolation_to_compose_strings
+    - prefer_is_empty
+    - prefer_is_not_empty
+    - prefer_iterable_whereType
+    - prefer_null_aware_operators
+    #    - prefer_single_quotes
+    - prefer_spread_collections
+    #    - prefer_typing_uninitialized_variables
+    - recursive_getters
+    #    - sort_child_properties_last
+    #    - sort_constructors_first
+    - sort_unnamed_constructors_first
+    - type_init_formals
+    - unnecessary_brace_in_string_interps
+    - unnecessary_const
+    - unnecessary_getters_setters
+    - unnecessary_new
+    - unnecessary_null_aware_assignments
+    - unnecessary_null_in_if_null_operators
+    - unnecessary_overrides
+    - unnecessary_parenthesis
+    - unnecessary_this
+    - use_full_hex_values_for_flutter_colors
+    - valid_regexps
+    - flutter_style_todos
