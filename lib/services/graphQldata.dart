@@ -15,7 +15,7 @@ class GraphQlObject {
   );
 }
 
-GraphQlObject graphQlObject = new GraphQlObject();
+GraphQlObject graphQlObject = GraphQlObject();
 
 String toggleIsCompletedMutation(result, index) {
   return ("""mutation ToggleTask{
