@@ -73,7 +73,9 @@ class _TodoAppState extends State<TodoApp> {
                             },
                             child: Text(
                               "Add",
-                              style: TextStyle(color: Colors.white),
+                              style: TextStyle(
+                                color: Colors.white,
+                              ),
                             ),
                           ),
                         ),
