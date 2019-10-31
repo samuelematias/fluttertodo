@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertodo/core/constants/env.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
 class GraphQlObject {
   static HttpLink httpLink = HttpLink(
-    uri: 'https://hasura-fluttertodo.herokuapp.com/v1/graphql',
+    uri: ENDPOINT,
   );
   static AuthLink authLink = AuthLink();
   static Link link = httpLink;
