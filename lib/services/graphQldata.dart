@@ -6,7 +6,7 @@ class GraphQlObject {
     uri: 'https://hasura-fluttertodo.herokuapp.com/v1/graphql',
   );
   static AuthLink authLink = AuthLink();
-  static Link link = httpLink as Link;
+  static Link link = httpLink;
   ValueNotifier<GraphQLClient> client = ValueNotifier(
     GraphQLClient(
       cache: InMemoryCache(),
